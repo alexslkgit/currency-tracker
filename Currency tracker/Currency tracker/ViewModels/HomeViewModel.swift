@@ -12,7 +12,7 @@ final class HomeViewModel: ObservableObject {
     
     private enum Constants {
         static let baseCurrency                 = "USD"
-        static let refreshInterval: TimeInterval = 3
+        static let refreshInterval: TimeInterval = 1
     }
     
     // MARK: - Published state
