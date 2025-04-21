@@ -8,14 +8,20 @@
 import Foundation
 
 struct ExchangeRate: Codable {
+    
+    private enum Constants {
+        static let identityRate: Double = 1.0
+    }
+    
+    // MARK: - Properties
+    
     let base: String
     let date: Date
     let rates: [String: Double]
     
+    // MARK: - API
+    
     func rate(for symbol: String) -> Double? {
-        if symbol == base {
-            return 1.0
-        }
-        return rates[symbol]
+        symbol == base ? Constants.identityRate : rates[symbol]
     }
 }

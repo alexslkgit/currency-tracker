@@ -11,7 +11,22 @@ import SwiftUI
 struct Currency_trackerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                HomeView()
+                    .tabItem {
+                        Label("Home", systemImage: "house")
+                    }
+                
+                Text("Favorites")
+                    .tabItem {
+                        Label("Favorites", systemImage: "heart")
+                    }
+                
+                Text("Settings")
+                    .tabItem {
+                        Label("Settings", systemImage: "gear")
+                    }
+            }
         }
     }
 }
