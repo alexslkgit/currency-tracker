@@ -1,6 +1,6 @@
 # Exchange Rate Tracker
 
-A lightweight SwiftUI app that tracks real‑time FX and crypto prices and lets users curate a personal watch‑list. Updates every 3 seconds—no backend required.
+A lightweight SwiftUI app that tracks real‑time FX and crypto prices and lets users curate a personal watch‑list. Updates every 1 seconds—no backend required.
 
 ---
 
