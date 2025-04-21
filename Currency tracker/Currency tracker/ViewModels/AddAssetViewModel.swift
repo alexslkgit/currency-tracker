@@ -59,7 +59,7 @@ final class AddAssetViewModel: ObservableObject {
     }
     
     // MARK: - Private
-    private func loadAssets() {
+    fileprivate func loadAssets() {
         isLoading = true
         selectedAssets = storageService.getSelectedAssets()
         
@@ -100,3 +100,21 @@ final class AddAssetViewModel: ObservableObject {
         }
     }
 }
+
+extension AddAssetViewModel {
+    func testSetAllAssets(_ list: [Asset])      { allAssets      = list }
+    func testSetSelectedAssets(_ list: [Asset]) { selectedAssets = list }
+}
+
+#if DEBUG
+extension AddAssetViewModel {
+    @MainActor
+    func testReload() { loadAssets() }
+    
+    @MainActor
+    func testInjectAllAssets(_ list: [Asset]) { allAssets = list }
+    
+    @MainActor
+    func testInjectSelectedAssets(_ list: [Asset]) { selectedAssets = list }
+}
+#endif

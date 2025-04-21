@@ -29,6 +29,26 @@
 		67EACBDD2DB621A700AD6FE5 /* Currency trackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Currency trackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		67EACC2E2DB6391A00AD6FE5 /* Exceptions for "Currency trackerTests" folder in "Currency trackerTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Mocks and Extensions/TestExtensions.swift",
+			);
+			target = 67EACBD22DB621A700AD6FE5 /* Currency trackerTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		67EACC2F2DB6391A00AD6FE5 /* Exceptions for "Currency trackerTests" folder in "Copy Bundle Resources" phase from "Currency trackerTests" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 67EACBD12DB621A700AD6FE5 /* Resources */;
+			membershipExceptions = (
+				"Mocks and Extensions/TestExtensions.swift",
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		67EACBC82DB621A500AD6FE5 /* Currency tracker */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -37,12 +57,11 @@
 		};
 		67EACBD62DB621A700AD6FE5 /* Currency trackerTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				67EACC2E2DB6391A00AD6FE5 /* Exceptions for "Currency trackerTests" folder in "Currency trackerTests" target */,
+				67EACC2F2DB6391A00AD6FE5 /* Exceptions for "Currency trackerTests" folder in "Copy Bundle Resources" phase from "Currency trackerTests" target */,
+			);
 			path = "Currency trackerTests";
-			sourceTree = "<group>";
-		};
-		67EACBE02DB621A700AD6FE5 /* Currency trackerUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Currency trackerUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -77,7 +96,6 @@
 			children = (
 				67EACBC82DB621A500AD6FE5 /* Currency tracker */,
 				67EACBD62DB621A700AD6FE5 /* Currency trackerTests */,
-				67EACBE02DB621A700AD6FE5 /* Currency trackerUITests */,
 				67EACBC72DB621A500AD6FE5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -152,9 +170,6 @@
 			);
 			dependencies = (
 				67EACBDF2DB621A700AD6FE5 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				67EACBE02DB621A700AD6FE5 /* Currency trackerUITests */,
 			);
 			name = "Currency trackerUITests";
 			packageProductDependencies = (

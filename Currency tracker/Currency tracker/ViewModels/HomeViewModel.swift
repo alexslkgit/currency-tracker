@@ -72,9 +72,17 @@ final class HomeViewModel: ObservableObject {
     
     func formatRate(for symbol: String) -> String {
         guard let rate = currentRates[symbol] else { return "N/A" }
-        return symbol == Constants.baseCurrency
-        ? "1.0000"
-        : rate.formatted(.number.precision(.fractionLength(rate >= 1 ? (rate >= 1000 ? 2 : 4) : 6)))
+        
+        if symbol == Constants.baseCurrency { return "1.0000" }
+        
+        switch rate {
+        case 1_000...:
+            return String(format: "%.2f", rate)             // 42 356.89
+        case 1..<1_000:
+            return String(format: "%.4f", rate)             // 0.8546
+        default:
+            return String(format: "%.6f", rate)             // 0.000123
+        }
     }
     
     func percentChange(for symbol: String) -> String {
@@ -127,3 +135,16 @@ final class HomeViewModel: ObservableObject {
         }
     }
 }
+
+#if DEBUG
+extension HomeViewModel {
+    @MainActor
+    func testReload() { reloadSelectedAssets() }
+    
+    @MainActor
+    func testInjectSelectedAssets(_ list: [Asset]) { selectedAssets = list }
+    
+    @MainActor
+    func testInjectCurrentRates(_ dict: [String: Double]) { currentRates = dict }
+}
+#endif
