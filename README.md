@@ -54,7 +54,7 @@ Tests           Mocks + XCTest suites
 2. **API key** — create a free account at **openexchangerates.org** and copy your *App ID*.
 3. **Configure** – open `Sources/Data/Networking/APIService.swift` and replace the placeholder:
    ```swift
-   private enum C { static let appId = "<YOUR_APP_ID>" }
+   private enum Constants { static let appId = "<YOUR_APP_ID>" }
    ```
 4. **Run** on an iOS 17+ simulator or device.
 
